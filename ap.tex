@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+ 
+\title{Prédiction des Prix des Maisons}
+\author{Université Protestante au Congo}
+\date{}
+ 
+\begin{document}
+ 
+\maketitle
+ 
+\section{Introduction}
+Dans le cadre de notre travail, nous nous sommes intéressés au rêve de tous les jeunes : devenir propriétaire. Avant de plonger dans la méthodologie, les techniques ou encore les outils utilisés dans la réalisation de ce travail, intéressons-nous à quelques statistiques. 85\% des jeunes adultes estiment qu’il est plus économique d’être propriétaire et 80\% des non-propriétaires souhaitent le devenir. Plus de 60\% espèrent pouvoir accéder à la propriété d’ici dix ans (47\% d’ici cinq ans). 35\% des sondés envisagent de réaliser un investissement locatif, ce taux atteint 40\% chez les jeunes actifs.
+ 
+À la vue de ces chiffres, nous proposons un outil qui prédit les prix des maisons à partir de diverses caractéristiques. Cela a des applications pratiques dans l'immobilier, permettant aux acheteurs et aux vendeurs de mieux comprendre la valeur des propriétés.
+ 
+\section{Méthodologie}
+ 
+\subsection{Chargement des Données}
+Nous avons utilisé un ensemble de données contenant des informations sur les caractéristiques des maisons et leurs prix de vente. Nous avons eu recours à Kaggle, une plateforme permettant l’accès à une large variété de jeux de données publics dans différents domaines (santé, finance, environnement, etc.).
+ 
+\subsection{Prétraitement}
+Après le chargement, les données ont été nettoyées pour supprimer les valeurs manquantes et les colonnes inutiles. Nous avons également normalisé les données pour améliorer les performances du modèle.
+ 
+\section{Modèle (Entraînement)}
+Nous avons choisi d'utiliser un \textit{Random Forest Regressor} en raison de sa capacité à capturer des relations non linéaires et de sa robustesse face au surajustement. Cet algorithme, disponible dans la bibliothèque \texttt{scikit-learn} en Python, est largement utilisé pour l’implémentation de modèles de machine learning.
+ 
+\subsection{Bibliothèques Python Utilisées}
+\begin{itemize}
+   \item \textbf{Pandas} : Pour la gestion et la manipulation des données.
+   \item \textbf{Numpy} : Pour les calculs numériques et les opérations sur les tableaux.
+   \item \textbf{Scikit-learn} : Pour l'implémentation des algorithmes d’apprentissage automatique, l’évaluation des modèles et la validation croisée.
+   \item \textbf{Matplotlib \& Seaborn} : Pour la création de graphiques et de visualisations.
+\end{itemize}
+ 
+\section{Déploiement}
+Le déploiement de notre outil a été réalisé à l’aide de \texttt{Streamlit}, un outil permettant le développement d’applications web interactives pour tester le modèle.
+ 
+\subsection{Fonctionnalités de l’Application}
+\begin{itemize}
+   \item Upload d’un fichier CSV ou entrée des données personnalisées
+   \item Prédictions par rapport aux entrées
+   \item Graphiques interactifs
+\end{itemize}
+ 
+\section{Résultats}
+Les performances du modèle ont été évaluées à l'aide de plusieurs métriques, notamment l'Erreur Absolue Moyenne (MAE) et la Racine de l'Erreur Quadratique Moyenne (RMSE). La distribution des erreurs a été visualisée dans un histogramme, permettant d'identifier les tendances et les biais dans les prédictions du modèle.
+ 
+\section{Conclusion}
+Les résultats montrent que notre modèle de prédiction des prix des maisons est performant, mais il existe encore des opportunités d'amélioration, telles que l'inclusion de caractéristiques supplémentaires ou l'essai d'autres algorithmes plus performants.
+ 
+\end{document}
